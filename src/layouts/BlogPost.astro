@@ -1,0 +1,70 @@
+---
+import Layout from './Layout.astro'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+
+interface Props {
+  title: string
+  description: string
+  date: Date
+  tags: string[]
+}
+
+const { title, description, date, tags } = Astro.props
+
+const formattedDate = date.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+})
+---
+
+<Layout title={`${title} — sooox.cc`}>
+  <Header />
+  <main class="flex-1">
+    <div class="max-w-3xl mx-auto px-6 py-12 lg:py-20">
+      <div class="mb-8">
+        <a
+          href="/blog"
+          class="text-sm text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors inline-flex items-center gap-1"
+        >
+          <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+          Back to Blog
+        </a>
+      </div>
+
+      <article>
+        <header class="mb-10">
+          <h1 class="text-4xl font-bold text-zinc-900 dark:text-white mb-4 leading-tight">
+            {title}
+          </h1>
+          <p class="text-zinc-500 dark:text-zinc-400 text-sm mb-4">{formattedDate}</p>
+          {
+            tags.length > 0 && (
+              <div class="flex flex-wrap gap-2">
+                {tags.map((tag) => (
+                  <span class="px-2 py-0.5 text-xs rounded bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            )
+          }
+        </header>
+
+        <div class="prose prose-zinc dark:prose-invert max-w-none
+          prose-headings:font-bold
+          prose-a:text-zinc-900 dark:prose-a:text-white prose-a:underline
+          prose-code:text-zinc-900 dark:prose-code:text-zinc-100
+          prose-pre:bg-zinc-900 dark:prose-pre:bg-zinc-950
+          prose-blockquote:border-zinc-300 dark:prose-blockquote:border-zinc-700
+          text-zinc-700 dark:text-zinc-300">
+          <slot />
+        </div>
+      </article>
+    </div>
+  </main>
+  <Footer />
+</Layout>

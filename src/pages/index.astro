@@ -1,0 +1,493 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import ProjectCard from '../components/ProjectCard.astro'
+---
+
+<Layout title="sooox.cc">
+  <Header />
+
+  <main class="flex-1">
+    <div class="max-w-5xl mx-auto px-6 py-12 lg:py-20">
+
+      <!-- Hero / About -->
+      <section id="about" class="mb-20">
+        <div class="max-w-3xl mx-auto text-center">
+          <div class="inline-block mb-6">
+            <div class="px-3 py-1.5 rounded-full border border-zinc-200 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-900">
+              <div class="flex items-center gap-2">
+                <div class="h-2 w-2 rounded-full bg-green-500 pulse-dot"></div>
+                <span class="text-xs font-medium text-zinc-600 dark:text-zinc-400">Available for collaboration</span>
+              </div>
+            </div>
+          </div>
+
+          <h1 class="text-5xl md:text-6xl font-bold text-zinc-900 dark:text-white mb-6 leading-tight">
+            sooox
+          </h1>
+
+          <p class="text-lg text-zinc-600 dark:text-zinc-300 mb-2">
+            MSc Cybersecurity student. Privacy advocate. Arch Linux user.
+          </p>
+          <p class="text-sm text-zinc-500 dark:text-zinc-400 mb-12 font-mono">
+            cybersecurity &middot; machine learning &middot; full-stack dev &middot; self-hosting
+          </p>
+
+          <!-- Quick Stats -->
+          <div class="grid grid-cols-3 gap-4 max-w-md mx-auto mb-12">
+            <div>
+              <div class="text-2xl font-bold text-zinc-900 dark:text-white">12</div>
+              <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1">Languages</p>
+            </div>
+            <div>
+              <div class="text-2xl font-bold text-zinc-900 dark:text-white">6+</div>
+              <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1">Frameworks</p>
+            </div>
+            <div>
+              <div class="text-2xl font-bold text-zinc-900 dark:text-white">5+</div>
+              <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1">Databases</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Current Project -->
+      <section id="project" class="mb-20">
+        <h2 class="text-3xl font-bold text-zinc-900 dark:text-white mb-12 text-center">Current Work</h2>
+
+        <div class="p-6 rounded-lg border border-green-200 dark:border-green-900/30 bg-green-50 dark:bg-green-950/20 max-w-3xl mx-auto">
+          <div class="flex items-start gap-4">
+            <div class="mt-1 shrink-0">
+              <svg class="h-6 w-6 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+            </div>
+            <div class="flex-1">
+              <div class="flex items-center gap-2 mb-2">
+                <h3 class="font-semibold text-green-900 dark:text-green-100">Master's Thesis</h3>
+                <span class="px-2 py-0.5 text-xs font-medium rounded-full bg-green-200 dark:bg-green-900/50 text-green-800 dark:text-green-300">Active</span>
+              </div>
+              <p class="text-sm text-green-800 dark:text-green-200 mb-3">
+                Comparative analysis of machine learning models for threat detection in resource-constrained environments.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-2 py-1 text-xs rounded border border-green-300 dark:border-green-800 text-green-700 dark:text-green-300 bg-green-100 dark:bg-green-900/30">TensorFlow</span>
+                <span class="px-2 py-1 text-xs rounded border border-green-300 dark:border-green-800 text-green-700 dark:text-green-300 bg-green-100 dark:bg-green-900/30">PyTorch</span>
+                <span class="px-2 py-1 text-xs rounded border border-green-300 dark:border-green-800 text-green-700 dark:text-green-300 bg-green-100 dark:bg-green-900/30">scikit-learn</span>
+                <span class="px-2 py-1 text-xs rounded border border-green-300 dark:border-green-800 text-green-700 dark:text-green-300 bg-green-100 dark:bg-green-900/30">Embedded C++</span>
+                <span class="px-2 py-1 text-xs rounded border border-green-300 dark:border-green-800 text-green-700 dark:text-green-300 bg-green-100 dark:bg-green-900/30">PlatformIO</span>
+                <span class="px-2 py-1 text-xs rounded border border-green-300 dark:border-green-800 text-green-700 dark:text-green-300 bg-green-100 dark:bg-green-900/30">Jupyter</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills -->
+      <section id="skills" class="mb-20">
+        <h2 class="text-3xl font-bold text-zinc-900 dark:text-white mb-12 text-center">Skills & Technologies</h2>
+
+        <!-- Languages -->
+        <div class="mb-8">
+          <h3 class="text-lg font-semibold text-zinc-900 dark:text-white mb-4 flex items-center gap-2">
+            <svg class="h-5 w-5 text-zinc-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+            </svg>
+            Languages
+          </h3>
+          <div class="grid grid-cols-3 sm:grid-cols-5 gap-3">
+            {[
+              { src: "https://api.iconify.design/skill-icons/python-light.svg", name: "Python" },
+              { src: "https://api.iconify.design/skill-icons/php-light.svg", name: "PHP" },
+              { src: "https://api.iconify.design/skill-icons/javascript.svg", name: "JavaScript" },
+              { src: "https://api.iconify.design/skill-icons/java-light.svg", name: "Java" },
+              { src: "https://api.iconify.design/skill-icons/c.svg", name: "C" },
+              { src: "https://api.iconify.design/skill-icons/cpp.svg", name: "C++" },
+              { src: "https://api.iconify.design/skill-icons/cs.svg", name: "C#" },
+              { src: "https://api.iconify.design/skill-icons/bash-light.svg", name: "Bash" },
+              { src: "https://api.iconify.design/skill-icons/html.svg", name: "HTML" },
+              { src: "https://api.iconify.design/skill-icons/css.svg", name: "CSS" },
+              { src: "https://api.iconify.design/skill-icons/rust.svg", name: "Rust" },
+              { src: "https://api.iconify.design/skill-icons/typescript.svg", name: "TypeScript" },
+            ].map(({ src, name }) => (
+              <div class="p-4 rounded-lg border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900/50 text-center flex flex-col items-center gap-2">
+                <img src={src} alt={name} class="tech-icon" />
+                <span class="text-xs font-medium text-zinc-900 dark:text-white">{name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Web Development -->
+        <div class="mb-8">
+          <h3 class="text-lg font-semibold text-zinc-900 dark:text-white mb-4 flex items-center gap-2">
+            <svg class="h-5 w-5 text-zinc-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
+            </svg>
+            Web Development
+          </h3>
+
+          <div class="grid md:grid-cols-2 gap-4">
+            <!-- Backend -->
+            <div class="p-5 rounded-lg border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900/50">
+              <h4 class="text-sm font-medium text-zinc-500 dark:text-zinc-400 mb-3 uppercase tracking-wider">Backend</h4>
+              <div class="grid grid-cols-3 gap-3">
+                <div class="flex flex-col items-center gap-2 p-2">
+                  <img src="https://api.iconify.design/skill-icons/laravel-light.svg" alt="Laravel" class="tech-icon">
+                  <span class="text-xs text-zinc-700 dark:text-zinc-300">Laravel</span>
+                </div>
+                <div class="flex flex-col items-center gap-2 p-2">
+                  <img src="https://api.iconify.design/skill-icons/flask-light.svg" alt="Flask" class="tech-icon">
+                  <span class="text-xs text-zinc-700 dark:text-zinc-300">Flask</span>
+                </div>
+                <div class="flex flex-col items-center gap-2 p-2">
+                  <img src="https://api.iconify.design/skill-icons/nodejs-light.svg" alt="Node.js" class="tech-icon">
+                  <span class="text-xs text-zinc-700 dark:text-zinc-300">Node.js</span>
+                </div>
+                <div class="flex flex-col items-center gap-2 p-2">
+                  <img src="https://api.iconify.design/skill-icons/spring-light.svg" alt="Spring" class="tech-icon">
+                  <span class="text-xs text-zinc-700 dark:text-zinc-300">Spring</span>
+                </div>
+                <div class="flex flex-col items-center gap-2 p-2">
+                  <img src="https://api.iconify.design/skill-icons/dotnet.svg" alt="ASP.NET" class="tech-icon">
+                  <span class="text-xs text-zinc-700 dark:text-zinc-300">ASP.NET</span>
+                </div>
+                <div class="flex flex-col items-center gap-2 p-2">
+                  <svg class="tech-icon" xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128"><path style="fill-rule:evenodd;fill:#fb70a9;fill-opacity:1" d="M108.566 83.547c-1.937 2.926-3.406 6.527-7.34 6.527-6.624 0-6.98-10.203-13.609-10.203-6.625 0-6.265 10.203-12.887 10.203-6.625 0-6.98-10.203-13.609-10.203-6.625 0-6.266 10.203-12.887 10.203-6.625 0-6.98-10.203-13.605-10.203-6.629 0-6.27 10.203-12.89 10.203-2.083 0-3.544-1.008-4.778-2.39-4.738-8.239-7.465-17.895-7.465-28.22 0-30.222 23.367-54.722 52.191-54.722 28.825 0 52.192 24.5 52.192 54.723 0 8.64-1.91 16.816-5.313 24.082Zm0 0"/><path style="fill-rule:evenodd;fill:#4e56a6;fill-opacity:1" d="M40.844 78.145v22.668c0 4.066-3.301 7.363-7.371 7.363a7.365 7.365 0 0 1-7.371-7.364V73.45c1.375-2.523 2.945-4.707 5.78-4.707 4.61 0 6.223 5.79 8.962 9.403Zm27.843 1.183v35.844a8.185 8.185 0 0 1-8.187 8.183c-4.523 0-8.191-3.664-8.191-8.183v-40.57c1.543-2.973 3.132-5.86 6.39-5.86 5.16 0 6.563 7.242 9.989 10.586Zm26.211-.66v26.023c0 4.067-3.3 7.364-7.37 7.364-4.071 0-7.372-3.297-7.372-7.364V72.707c1.281-2.195 2.809-3.965 5.364-3.965 4.84 0 6.375 6.38 9.378 9.926Zm0 0"/></svg>
+                  <span class="text-xs text-zinc-700 dark:text-zinc-300">Livewire</span>
+                </div>
+                <div class="flex flex-col items-center gap-2 p-2">
+                  <img src="https://api.iconify.design/skill-icons/tauri-light.svg" alt="Tauri" class="tech-icon">
+                  <span class="text-xs text-zinc-700 dark:text-zinc-300">Tauri</span>
+                </div>
+                <div class="flex flex-col items-center gap-2 p-2">
+                  <img src="https://api.iconify.design/skill-icons/elasticsearch-light.svg" alt="Elasticsearch" class="tech-icon">
+                  <span class="text-xs text-zinc-700 dark:text-zinc-300">Elasticsearch</span>
+                </div>
+                <div class="flex flex-col items-center gap-2 p-2">
+                  <img src="https://cdn.simpleicons.org/streamlit/FF4B4B" alt="Streamlit" class="tech-icon">
+                  <span class="text-xs text-zinc-700 dark:text-zinc-300">Streamlit</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Frontend -->
+            <div class="p-5 rounded-lg border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900/50">
+              <h4 class="text-sm font-medium text-zinc-500 dark:text-zinc-400 mb-3 uppercase tracking-wider">Frontend</h4>
+              <div class="grid grid-cols-3 gap-3">
+                <div class="flex flex-col items-center gap-2 p-2">
+                  <img src="https://api.iconify.design/skill-icons/tailwindcss-light.svg" alt="Tailwind CSS" class="tech-icon">
+                  <span class="text-xs text-zinc-700 dark:text-zinc-300">Tailwind</span>
+                </div>
+                <div class="flex flex-col items-center gap-2 p-2">
+                  <img src="https://api.iconify.design/skill-icons/alpinejs-light.svg" alt="Alpine.js" class="tech-icon">
+                  <span class="text-xs text-zinc-700 dark:text-zinc-300">Alpine.js</span>
+                </div>
+                <div class="flex flex-col items-center gap-2 p-2">
+                  <img src="https://api.iconify.design/skill-icons/jquery.svg" alt="jQuery" class="tech-icon">
+                  <span class="text-xs text-zinc-700 dark:text-zinc-300">jQuery</span>
+                </div>
+                <div class="flex flex-col items-center gap-2 p-2">
+                  <img src="https://api.iconify.design/skill-icons/bootstrap.svg" alt="Bootstrap" class="tech-icon">
+                  <span class="text-xs text-zinc-700 dark:text-zinc-300">Bootstrap</span>
+                </div>
+                <div class="flex flex-col items-center gap-2 p-2">
+                  <img src="https://cdn.simpleicons.org/thymeleaf/005F0F" alt="Thymeleaf" class="tech-icon">
+                  <span class="text-xs text-zinc-700 dark:text-zinc-300">Thymeleaf</span>
+                </div>
+                <div class="flex flex-col items-center gap-2 p-2">
+                  <img src="https://api.iconify.design/skill-icons/html.svg" alt="Blade" class="tech-icon">
+                  <span class="text-xs text-zinc-700 dark:text-zinc-300">Blade</span>
+                </div>
+                <div class="flex flex-col items-center gap-2 p-2">
+                  <img src="https://api.iconify.design/skill-icons/react-light.svg" alt="React" class="tech-icon">
+                  <span class="text-xs text-zinc-700 dark:text-zinc-300">React</span>
+                </div>
+                <div class="flex flex-col items-center gap-2 p-2">
+                  <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNTYiIGhlaWdodD0iMjU2IiB2aWV3Qm94PSIwIDAgMjU2IDI1NiI+PGcgZmlsbD0ibm9uZSI+PHJlY3Qgd2lkdGg9IjI1NiIgaGVpZ2h0PSIyNTYiIGZpbGw9IiMyNDI5MzgiIHJ4PSI2MCIvPjxwYXRoIGZpbGw9IiM4MWNkMzkiIGQ9Ik0xMTkuODc4IDMxLjExNmM0LjkxOS0yLjgxNSAxMS4zMjUtMi44MjggMTYuMjM5IDBjMjQuNzIyIDEzLjk3IDQ5LjQ1MiAyNy45MTcgNzQuMTcgNDEuODk1YzQuNjUgMi42MTkgNy43NTkgNy43OTMgNy43MTIgMTMuMTV2ODQuMDQ1Yy4wMzUgNS41NzktMy4zODIgMTAuODc3LTguMjg3IDEzLjQzNmMtMjQuNjQxIDEzLjg5My00OS4yNyAyNy44MDItNzMuOTA3IDQxLjY5NWMtNS4wMTkgMi44Ny0xMS41NTQgMi42NDktMTYuNDE4LS40NTdjLTcuMzg3LTQuMjgyLTE0Ljc4Ny04LjU0NC0yMi4xNzUtMTIuODIyYy0xLjUxLS45LTMuMjEyLTEuNjE2LTQuMjc4LTMuMDhjLjk0My0xLjI3IDIuNjI4LTEuNDI4IDMuOTk3LTEuOTgzYzMuMDgzLS45ODEgNS45MTYtMi41NTUgOC43NDgtNC4wODJjLjcxNy0uNDkgMS41OTEtLjMwMiAyLjI3OC4xMzZjNi4zMTcgMy42MjIgMTIuNTc5IDcuMzUgMTguOTE3IDEwLjkzN2MxLjM1Mi43ODEgMi43MjEtLjI1NiAzLjg3Ny0uOWMyNC4xOC0xMy42NjcgNDguMzktMjcuMjgxIDcyLjU2Ny00MC45NTJjLjg5Ni0uNDMxIDEuMzkxLTEuMzgyIDEuMzE4LTIuMzYzYy4wMTctMjcuNzI1LjAwNC01NS40NTQuMDA5LTgzLjE4Yy4xMDItMS4xMTItLjU0Mi0yLjEzNi0xLjU0OS0yLjU5MmMtMjQuNTU1LTEzLjgyOS00OS4wOTktMjcuNjc4LTczLjY1LTQxLjUxYTIuNTYgMi41NiAwIDAgMC0yLjg5Mi0uMDA1Yy0yNC41NTIgMTMuODM3LTQ5LjA5IDI3LjctNzMuNjQyIDQxLjUyN2MtMS4wMDMuNDU3LTEuNjc2IDEuNDY0LTEuNTU3IDIuNThjLjAwNSAyNy43MjYgMCA1NS40NTUgMCA4My4xODRhMi4zNSAyLjM1IDAgMCAwIDEuMzM2IDIuMzM0YzYuNTUxIDMuNzE1IDEzLjExMSA3LjQwNCAxOS42NjcgMTEuMTA3YzMuNjk0IDEuOTg3IDguMjI4IDMuMTY5IDEyLjI5OCAxLjY0NmMzLjU5LTEuMjg4IDYuMTA3LTQuOTUzIDYuMDM5LTguNzY1Yy4wMzQtMjcuNTYzLS4wMTctNTUuMTMuMDI1LTgyLjY5Yy0uMDktMS4yMjMgMS4wNzEtMi4yMzQgMi4yNjEtMi4xMThjMy4xNDgtLjAyMiA2LjMtLjA0MyA5LjQ0OC4wMDhjMS4zMTQtLjAzIDIuMjE4IDEuMjg4IDIuMDU2IDIuNTJjLS4wMTMgMjcuNzM4LjAzNCA1NS40NzYtLjAyMSA4My4yMTNjLjAwOCA3LjM5My0zLjAyOSAxNS40MzctOS44NjcgMTkuMDU0Yy04LjQyMyA0LjM2My0xOC44MzUgMy40MzgtMjcuMTU3LS43NDZjLTcuMjA0LTMuNTk2LTE0LjA4LTcuODQtMjEuMTU2LTExLjY5MmMtNC45MTgtMi41NDUtOC4zMTgtNy44NjQtOC4yODMtMTMuNDM5Vjg2LjE2MWMtLjA1Mi01LjQ2OCAzLjE4Mi0xMC43MzYgNy45NzUtMTMuMzE3YzI0LjYzNy0xMy45MDMgNDkuMjctMjcuODE4IDczLjkwMi00MS43MjgiLz48cGF0aCBmaWxsPSIjODFjZDM5IiBkPSJNMTQxLjM3MiA4OS4zMzVjMTAuNzQ1LS42OTIgMjIuMjQ4LS40MSAzMS45MTcgNC44ODRjNy40ODcgNC4wNTYgMTEuNjM3IDEyLjU3IDExLjc2OSAyMC44ODdjLS4yMDkgMS4xMjEtMS4zODIgMS43NC0yLjQ1MyAxLjY2M2MtMy4xMTctLjAwNC02LjIzNi4wNDMtOS4zNTMtLjAyMWMtMS4zMjMuMDUxLTIuMDkxLTEuMTY4LTIuMjU3LTIuMzM3Yy0uODk2LTMuOTgtMy4wNjctNy45MjEtNi44MTItOS44NDFjLTUuNzUtMi44NzgtMTIuNDE2LTIuNzMzLTE4LjY4Ni0yLjY3M2MtNC41NzcuMjQyLTkuNDk5LjYzOS0xMy4zNzcgMy4zM2MtMi45NzcgMi4wMzktMy44ODEgNi4xNTUtMi44MTkgOS40N2MxLjAwMiAyLjM4IDMuNzQ5IDMuMTQ4IDUuOTk4IDMuODU2YzEyLjk0OSAzLjM4NyAyNi42NzEgMy4wNDkgMzkuMzczIDcuNTA2YzUuMjU5IDEuODE3IDEwLjQwMyA1LjM1IDEyLjIwMyAxMC44NTZjMi4zNTUgNy4zOCAxLjMyMyAxNi4yLTMuOTI4IDIyLjEyNGMtNC4yNTggNC44NzUtMTAuNDU5IDcuNTI5LTE2LjY0NCA4Ljk3Yy04LjIyOCAxLjgzNS0xNi43NjcgMS44ODItMjUuMTIzIDEuMDY3Yy03Ljg1Ny0uODk2LTE2LjAzNC0yLjk2LTIyLjA5OS04LjMxM2MtNS4xODctNC41MDQtNy43Mi0xMS41MjItNy40NjktMTguMjk0Yy4wNi0xLjE0NCAxLjE5OS0xLjk0MiAyLjI5NS0xLjg0OGMzLjEzOS0uMDI1IDYuMjc5LS4wMzQgOS40MTguMDA1YzEuMjU1LS4wOSAyLjE4NC45OTQgMi4yNDkgMi4xNzZjLjU3OCAzLjc5MSAyLjAwMyA3Ljc3MSA1LjMxIDEwLjAxOGM2LjM4IDQuMTE3IDE0LjM4NyAzLjgzNSAyMS42OTMgMy45NWM2LjA1My0uMjY4IDEyLjg0OC0uMzQ5IDE3Ljc4Ny00LjM1YzIuNjA2LTIuMjgyIDMuMzc4LTYuMSAyLjY3NC05LjM4NGMtLjc2My0yLjc3My0zLjY2NC00LjA2NS02LjE1NS00LjkxYy0xMi43ODMtNC4wNDMtMjYuNjU5LTIuNTc2LTM5LjMxOC03LjE0OWMtNS4xNC0xLjgxNi0xMC4xMS01LjI1LTEyLjA4NC0xMC41M2MtMi43NTUtNy40NzMtMS40OTMtMTYuNzE3IDQuMzA4LTIyLjQ0YzUuNjU2LTUuNjk1IDEzLjgyLTcuODg4IDIxLjU4My04LjY3MiIvPjwvZz48L3N2Zz4=" alt="EJS" class="tech-icon rounded">
+                  <span class="text-xs text-zinc-700 dark:text-zinc-300">EJS</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Data & AI/ML -->
+        <div class="mb-8">
+          <h3 class="text-lg font-semibold text-zinc-900 dark:text-white mb-4 flex items-center gap-2">
+            <svg class="h-5 w-5 text-zinc-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+            </svg>
+            Data & AI/ML
+          </h3>
+
+          <div class="grid md:grid-cols-2 gap-4">
+            <!-- AI/ML -->
+            <div class="p-5 rounded-lg border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900/50">
+              <h4 class="text-sm font-medium text-zinc-500 dark:text-zinc-400 mb-3 uppercase tracking-wider">AI / Machine Learning</h4>
+              <div class="grid grid-cols-3 gap-3">
+                <div class="flex flex-col items-center gap-2 p-2">
+                  <img src="https://api.iconify.design/skill-icons/tensorflow-light.svg" alt="TensorFlow" class="tech-icon">
+                  <span class="text-xs text-zinc-700 dark:text-zinc-300">TensorFlow</span>
+                </div>
+                <div class="flex flex-col items-center gap-2 p-2">
+                  <img src="https://api.iconify.design/skill-icons/pytorch-light.svg" alt="PyTorch" class="tech-icon">
+                  <span class="text-xs text-zinc-700 dark:text-zinc-300">PyTorch</span>
+                </div>
+                <div class="flex flex-col items-center gap-2 p-2">
+                  <img src="https://api.iconify.design/skill-icons/opencv-light.svg" alt="OpenCV" class="tech-icon">
+                  <span class="text-xs text-zinc-700 dark:text-zinc-300">OpenCV</span>
+                </div>
+                <div class="flex flex-col items-center gap-2 p-2">
+                  <img src="https://api.iconify.design/skill-icons/scikitlearn-light.svg" alt="scikit-learn" class="tech-icon">
+                  <span class="text-xs text-zinc-700 dark:text-zinc-300">scikit-learn</span>
+                </div>
+                <div class="flex flex-col items-center gap-2 p-2">
+                  <img src="https://cdn.simpleicons.org/ultralytics/4B0082" alt="YOLOv8" class="tech-icon">
+                  <span class="text-xs text-zinc-700 dark:text-zinc-300">YOLOv8</span>
+                </div>
+                <div class="flex flex-col items-center gap-2 p-2">
+                  <img src="https://cdn.simpleicons.org/pandas/150458" alt="pandas" class="tech-icon">
+                  <span class="text-xs text-zinc-700 dark:text-zinc-300">pandas</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Data Engineering -->
+            <div class="p-5 rounded-lg border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900/50">
+              <h4 class="text-sm font-medium text-zinc-500 dark:text-zinc-400 mb-3 uppercase tracking-wider">Data Engineering</h4>
+              <div class="grid grid-cols-3 gap-3">
+                <div class="flex flex-col items-center gap-2 p-2">
+                  <svg class="tech-icon" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"><path fill="url(#fabric-a)" fill-rule="evenodd" d="m5.64 31.6-.586 2.144c-.218.685-.524 1.693-.689 2.59a5.629 5.629 0 0 0 4.638 7.588c.792.114 1.688.108 2.692-.04l4.613-.636a2.924 2.924 0 0 0 2.421-2.127l3.175-11.662L5.64 31.599Z" clip-rule="evenodd"/><path fill="url(#fabric-b)" d="M10.14 32.152c-4.863.753-5.861 4.423-5.861 4.423l4.656-17.11 24.333-3.292-3.318 12.052a1.706 1.706 0 0 1-1.388 1.244l-.136.022-18.423 2.684.137-.023Z"/><path fill="url(#fabric-c)" fill-opacity=".8" d="M10.14 32.152c-4.863.753-5.861 4.423-5.861 4.423l4.656-17.11 24.333-3.292-3.318 12.052a1.706 1.706 0 0 1-1.388 1.244l-.136.022-18.423 2.684.137-.023Z"/><path fill="url(#fabric-d)" d="m12.899 21.235 26.938-3.98a1.597 1.597 0 0 0 1.323-1.17l2.78-10.06a1.595 1.595 0 0 0-1.74-2.012L16.498 7.81a7.185 7.185 0 0 0-5.777 5.193L7.013 26.438c.744-2.717 1.202-4.355 5.886-5.203Z"/><path fill="url(#fabric-e)" d="m12.899 21.235 26.938-3.98a1.597 1.597 0 0 0 1.323-1.17l2.78-10.06a1.595 1.595 0 0 0-1.74-2.012L16.498 7.81a7.185 7.185 0 0 0-5.777 5.193L7.013 26.438c.744-2.717 1.202-4.355 5.886-5.203Z"/><path fill="url(#fabric-f)" fill-opacity=".4" d="m12.899 21.235 26.938-3.98a1.597 1.597 0 0 0 1.323-1.17l2.78-10.06a1.595 1.595 0 0 0-1.74-2.012L16.498 7.81a7.185 7.185 0 0 0-5.777 5.193L7.013 26.438c.744-2.717 1.202-4.355 5.886-5.203Z"/><path fill="url(#fabric-g)" d="M12.899 21.236c-3.901.706-4.87 1.962-5.514 3.932L4.279 36.577s.992-3.633 5.796-4.41l18.352-2.673.136-.022a1.707 1.707 0 0 0 1.388-1.244l2.73-9.915-19.782 2.923Z"/><path fill="url(#fabric-h)" fill-opacity=".2" d="M12.899 21.236c-3.901.706-4.87 1.962-5.514 3.932L4.279 36.577s.992-3.633 5.796-4.41l18.352-2.673.136-.022a1.707 1.707 0 0 0 1.388-1.244l2.73-9.915-19.782 2.923Z"/><path fill="url(#fabric-i)" fill-rule="evenodd" d="M10.075 32.167c-4.06.657-5.392 3.345-5.71 4.164a5.629 5.629 0 0 0 4.638 7.59c.792.114 1.688.108 2.692-.039l4.613-.637a2.924 2.924 0 0 0 2.421-2.127l2.894-10.633-11.547 1.683-.001-.001Z" clip-rule="evenodd"/><defs><linearGradient id="fabric-a" x1="12.953" x2="12.953" y1="44.001" y2="29.457" gradientUnits="userSpaceOnUse"><stop offset=".056" stop-color="#2AAC94"/><stop offset="1" stop-color="#085954"/></linearGradient><linearGradient id="fabric-b" x1="31.331" x2="17.286" y1="33.448" y2="18.173" gradientUnits="userSpaceOnUse"><stop offset=".042" stop-color="#ABE88E"/><stop offset=".549" stop-color="#2AAA92"/><stop offset=".906" stop-color="#117865"/></linearGradient><linearGradient id="fabric-c" x1="-3.182" x2="10.183" y1="32.706" y2="28.148" gradientUnits="userSpaceOnUse"><stop stop-color="#6AD6F9"/><stop offset="1" stop-color="#6AD6F9" stop-opacity="0"/></linearGradient><linearGradient id="fabric-d" x1="7.013" x2="42.589" y1="15.219" y2="15.219" gradientUnits="userSpaceOnUse"><stop offset=".043" stop-color="#25FFD4"/><stop offset=".874" stop-color="#55DDB9"/></linearGradient><linearGradient id="fabric-e" x1="7.013" x2="39.06" y1="10.247" y2="25.128" gradientUnits="userSpaceOnUse"><stop stop-color="#6AD6F9"/><stop offset=".651" stop-color="#6DE9BB"/><stop offset=".994" stop-color="#ABE88E"/></linearGradient><linearGradient id="fabric-f" x1="9.978" x2="27.404" y1="13.031" y2="16.885" gradientUnits="userSpaceOnUse"><stop stop-color="#fff" stop-opacity="0"/><stop offset=".459" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient><linearGradient id="fabric-g" x1="15.756" x2="16.168" y1="27.96" y2="15.74" gradientUnits="userSpaceOnUse"><stop offset=".205" stop-color="#063D3B" stop-opacity="0"/><stop offset=".872" stop-color="#063D3B" stop-opacity=".75"/></linearGradient><linearGradient id="fabric-h" x1="2.81" x2="17.701" y1="26.744" y2="29.545" gradientUnits="userSpaceOnUse"><stop stop-color="#fff" stop-opacity="0"/><stop offset=".459" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient><linearGradient id="fabric-i" x1="13.567" x2="10.662" y1="39.97" y2="25.764" gradientUnits="userSpaceOnUse"><stop offset=".064" stop-color="#063D3B" stop-opacity="0"/><stop offset="1" stop-color="#063D3B"/></linearGradient></defs></svg>
+                  <span class="text-xs text-zinc-700 dark:text-zinc-300">MS Fabric</span>
+                </div>
+                <div class="flex flex-col items-center gap-2 p-2">
+                  <svg class="tech-icon" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="#FF694A" d="M245.121 10.647c6.018 5.787 9.953 13.425 10.879 21.758c0 3.472-.926 5.787-3.01 10.185c-2.082 4.397-27.775 48.839-35.413 61.106c-4.398 7.176-6.713 15.74-6.713 24.072c0 8.565 2.315 16.898 6.713 24.073c7.638 12.268 33.33 56.94 35.414 61.338c2.083 4.398 3.009 6.48 3.009 9.953c-.926 8.333-4.63 15.971-10.647 21.526c-5.787 6.018-13.425 9.953-21.527 10.648c-3.471 0-5.786-.926-9.953-3.01c-4.166-2.083-49.533-27.08-61.8-34.719c-.927-.463-1.852-1.157-3.01-1.62L88.42 180.08c1.388 11.573 6.48 22.683 14.813 30.784c1.62 1.62 3.24 3.01 5.093 4.398c-1.39.694-3.01 1.39-4.398 2.315c-12.268 7.638-56.94 33.33-61.338 35.414c-4.398 2.083-6.481 3.009-10.185 3.009c-8.333-.926-15.971-4.63-21.526-10.647C4.86 239.566.926 231.928 0 223.595c.231-3.472 1.157-6.944 3.01-9.953c2.082-4.398 27.775-49.07 35.413-61.338c4.398-7.176 6.713-15.508 6.713-24.072c0-8.565-2.315-16.898-6.713-24.073c-7.638-12.73-33.562-57.403-35.414-61.801C1.157 39.348.231 35.877 0 32.405c.926-8.333 4.63-15.971 10.647-21.758C16.434 4.63 24.072.926 32.405 0c3.472.231 6.944 1.157 10.185 3.01c3.703 1.62 36.34 20.6 53.7 30.784l3.934 2.315c1.389.925 2.546 1.62 3.472 2.083l1.852 1.157l61.8 36.571c-1.388-13.888-8.563-26.618-19.674-35.182c1.39-.694 3.01-1.39 4.398-2.315c12.268-7.638 56.94-33.562 61.338-35.414C216.42 1.157 219.891.231 223.595 0a35.434 35.434 0 0 1 21.526 10.647m-113.88 133.787l13.193-13.194c1.852-1.851 1.852-4.629 0-6.48l-13.194-13.194c-1.851-1.852-4.629-1.852-6.48 0l-13.194 13.194c-1.852 1.851-1.852 4.629 0 6.48l13.194 13.194c1.62 1.62 4.629 1.62 6.48 0"/></svg>
+                  <span class="text-xs text-zinc-700 dark:text-zinc-300">dbt</span>
+                </div>
+                <div class="flex flex-col items-center gap-2 p-2">
+                  <img src="https://cdn.simpleicons.org/jupyter/F37626" alt="Jupyter" class="tech-icon">
+                  <span class="text-xs text-zinc-700 dark:text-zinc-300">Jupyter</span>
+                </div>
+                <div class="flex flex-col items-center gap-2 p-2">
+                  <img src="https://cdn.simpleicons.org/apacheairflow/017CEE" alt="Airflow" class="tech-icon">
+                  <span class="text-xs text-zinc-700 dark:text-zinc-300">Airflow</span>
+                </div>
+                <div class="flex flex-col items-center gap-2 p-2">
+                  <img src="https://cdn.simpleicons.org/minio/C72C48" alt="MinIO" class="tech-icon">
+                  <span class="text-xs text-zinc-700 dark:text-zinc-300">MinIO</span>
+                </div>
+                <div class="flex flex-col items-center gap-2 p-2">
+                  <img src="https://cdn.simpleicons.org/apachesuperset/20A6C9" alt="Superset" class="tech-icon">
+                  <span class="text-xs text-zinc-700 dark:text-zinc-300">Superset</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Databases -->
+        <div class="mb-8">
+          <h3 class="text-lg font-semibold text-zinc-900 dark:text-white mb-4 flex items-center gap-2">
+            <svg class="h-5 w-5 text-zinc-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"/>
+            </svg>
+            Databases
+          </h3>
+          <div class="grid grid-cols-3 sm:grid-cols-5 gap-3">
+            {[
+              { src: "https://api.iconify.design/skill-icons/postgresql-light.svg", name: "PostgreSQL" },
+              { src: "https://api.iconify.design/skill-icons/mysql-light.svg", name: "MySQL" },
+              { src: "https://api.iconify.design/skill-icons/sqlite.svg", name: "SQLite" },
+              { src: "https://api.iconify.design/skill-icons/mongodb.svg", name: "MongoDB" },
+              { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mariadb/mariadb-original.svg", name: "MariaDB" },
+            ].map(({ src, name }) => (
+              <div class="p-4 rounded-lg border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900/50 text-center flex flex-col items-center gap-2">
+                <img src={src} alt={name} class="tech-icon" />
+                <span class="text-xs font-medium text-zinc-900 dark:text-white">{name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- DevOps & Infrastructure -->
+        <div class="mb-8">
+          <h3 class="text-lg font-semibold text-zinc-900 dark:text-white mb-4 flex items-center gap-2">
+            <svg class="h-5 w-5 text-zinc-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"/>
+            </svg>
+            DevOps & Infrastructure
+          </h3>
+
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="p-5 rounded-lg border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900/50">
+              <h4 class="text-sm font-medium text-zinc-500 dark:text-zinc-400 mb-3 uppercase tracking-wider">Containerization & CI/CD</h4>
+              <div class="grid grid-cols-3 gap-3">
+                <div class="flex flex-col items-center gap-2 p-2">
+                  <img src="https://api.iconify.design/skill-icons/docker.svg" alt="Docker" class="tech-icon">
+                  <span class="text-xs text-zinc-700 dark:text-zinc-300">Docker</span>
+                </div>
+                <div class="flex flex-col items-center gap-2 p-2">
+                  <img src="https://api.iconify.design/skill-icons/kubernetes.svg" alt="Kubernetes" class="tech-icon">
+                  <span class="text-xs text-zinc-700 dark:text-zinc-300">Kubernetes</span>
+                </div>
+                <div class="flex flex-col items-center gap-2 p-2">
+                  <img src="https://api.iconify.design/skill-icons/git.svg" alt="Git" class="tech-icon">
+                  <span class="text-xs text-zinc-700 dark:text-zinc-300">Git</span>
+                </div>
+                <div class="flex flex-col items-center gap-2 p-2">
+                  <img src="https://api.iconify.design/skill-icons/jenkins-light.svg" alt="Jenkins" class="tech-icon">
+                  <span class="text-xs text-zinc-700 dark:text-zinc-300">Jenkins</span>
+                </div>
+                <div class="flex flex-col items-center gap-2 p-2">
+                  <img src="https://api.iconify.design/skill-icons/nginx.svg" alt="NGINX" class="tech-icon">
+                  <span class="text-xs text-zinc-700 dark:text-zinc-300">NGINX</span>
+                </div>
+                <div class="flex flex-col items-center gap-2 p-2">
+                  <img src="https://api.iconify.design/skill-icons/linux-light.svg" alt="Linux" class="tech-icon">
+                  <span class="text-xs text-zinc-700 dark:text-zinc-300">Linux</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-5 rounded-lg border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900/50">
+              <h4 class="text-sm font-medium text-zinc-500 dark:text-zinc-400 mb-3 uppercase tracking-wider">Infrastructure</h4>
+              <div class="grid grid-cols-3 gap-3">
+                <div class="flex flex-col items-center gap-2 p-2">
+                  <img src="https://cdn.simpleicons.org/proxmox/E57000" alt="Proxmox" class="tech-icon">
+                  <span class="text-xs text-zinc-700 dark:text-zinc-300">Proxmox</span>
+                </div>
+                <div class="flex flex-col items-center gap-2 p-2">
+                  <img src="https://api.iconify.design/skill-icons/arch-light.svg" alt="Arch Linux" class="tech-icon">
+                  <span class="text-xs text-zinc-700 dark:text-zinc-300">Arch Linux</span>
+                </div>
+                <div class="flex flex-col items-center gap-2 p-2">
+                  <svg class="tech-icon text-zinc-700 dark:text-zinc-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2"/>
+                  </svg>
+                  <span class="text-xs text-zinc-700 dark:text-zinc-300">Self-Hosting</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Privacy & Security -->
+        <div class="mb-8">
+          <h3 class="text-lg font-semibold text-zinc-900 dark:text-white mb-4 flex items-center gap-2">
+            <svg class="h-5 w-5 text-zinc-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+            </svg>
+            Privacy & Security
+          </h3>
+          <div class="grid grid-cols-3 sm:grid-cols-5 gap-3">
+            <div class="p-4 rounded-lg border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900/50 text-center">
+              <svg class="h-8 w-8 mx-auto mb-2 text-zinc-700 dark:text-zinc-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+              </svg>
+              <span class="text-xs font-medium text-zinc-900 dark:text-white">OSINT</span>
+            </div>
+            <div class="p-4 rounded-lg border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900/50 text-center">
+              <svg class="h-8 w-8 mx-auto mb-2 text-zinc-700 dark:text-zinc-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+              </svg>
+              <span class="text-xs font-medium text-zinc-900 dark:text-white">OPSEC</span>
+            </div>
+            <div class="p-4 rounded-lg border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900/50 text-center">
+              <svg class="h-8 w-8 mx-auto mb-2 text-zinc-700 dark:text-zinc-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+              </svg>
+              <span class="text-xs font-medium text-zinc-900 dark:text-white">Cryptography</span>
+            </div>
+            <div class="p-4 rounded-lg border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900/50 text-center">
+              <svg class="h-8 w-8 mx-auto mb-2 text-zinc-700 dark:text-zinc-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"/>
+              </svg>
+              <span class="text-xs font-medium text-zinc-900 dark:text-white">PGP/GPG</span>
+            </div>
+            <div class="p-4 rounded-lg border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900/50 text-center">
+              <img src="https://cdn.simpleicons.org/tryhackme/212C42" alt="TryHackMe" class="h-8 w-8 mx-auto mb-2">
+              <span class="text-xs font-medium text-zinc-900 dark:text-white">TryHackMe</span>
+            </div>
+          </div>
+          <div class="mt-4 flex justify-center">
+            <iframe src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=34757" style="border:none;" class="h-[80px] w-full max-w-md"></iframe>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section class="mb-20">
+        <h2 class="text-2xl font-bold text-zinc-900 dark:text-white mb-8 text-center">Featured Projects</h2>
+
+        <div class="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+          <ProjectCard
+            href="https://github.com/sooox-cc/privacymatters"
+            title="PrivacyMatters"
+            description="Anonymous forum platform. No email, no tracking, multi-network support (clearnet, Tor, I2P)."
+            tags={["Laravel", "Livewire", "PostgreSQL", "MinIO"]}
+            blogSlug="privacymatters"
+            icon='<svg class="h-5 w-5 text-zinc-900 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>'
+          />
+          <ProjectCard
+            href="https://github.com/sooox-cc/osint-studio"
+            title="OSINT Studio"
+            description="Desktop OSINT investigation tool with entity mapping, graph visualization, and relationship analysis."
+            tags={["Rust", "Tauri", "TypeScript", "React"]}
+            blogSlug="osint-studio"
+            icon='<svg class="h-5 w-5 text-zinc-900 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>'
+          />
+          <ProjectCard
+            href="https://github.com/sooox-cc/mdzen"
+            title="mdzen"
+            description="Minimalist, zen-like markdown reader with syntax highlighting, search, and table of contents."
+            tags={["Rust", "egui"]}
+            blogSlug="mdzen"
+            icon='<svg class="h-5 w-5 text-zinc-900 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>'
+          />
+          <ProjectCard
+            href="https://github.com/sooox-cc/breach-browser"
+            title="Breach Browser"
+            description="High-performance full-text search engine for large text datasets with advanced search syntax."
+            tags={["Python", "Flask", "Elasticsearch"]}
+            blogSlug="breach-browser"
+            icon='<svg class="h-5 w-5 text-zinc-900 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/></svg>'
+          />
+          <ProjectCard
+            href="https://github.com/sooox-cc/ids"
+            title="Cloud IDS"
+            description="ML-based intrusion detection system trained on the UNSW-NB15 cybersecurity benchmark dataset."
+            tags={["Python", "Jupyter", "Docker"]}
+            blogSlug="cloud-ids"
+            icon='<svg class="h-5 w-5 text-zinc-900 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>'
+          />
+          <ProjectCard
+            href="https://github.com/sooox-cc/pgp-verification"
+            title="PGP Verification"
+            description="2FA via PGP challenge-response protocol. Identity verification without KYC or personal data."
+            tags={["Python", "Streamlit", "PGPy"]}
+            blogSlug="pgp-verification"
+            icon='<svg class="h-5 w-5 text-zinc-900 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"/></svg>'
+          />
+        </div>
+
+        <div class="mt-6 text-center">
+          <a
+            href="https://github.com/sooox-cc?tab=repositories"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
+          >
+            View all repositories
+            <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

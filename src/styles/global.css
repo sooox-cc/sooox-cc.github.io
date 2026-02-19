@@ -1,0 +1,23 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --font-sans: 'Gohufont', monospace;
+  --font-mono: 'Gohufont', monospace;
+}
+
+.tech-icon {
+  width: 32px;
+  height: 32px;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.pulse-dot {
+  animation: pulse-dot 2s ease-in-out infinite;
+}
