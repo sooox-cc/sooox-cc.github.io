@@ -9,7 +9,7 @@ draft: false
 I host a couple things, here I will list what exactly I host and how I use Pangolin, 
 an open source and "self hosted" cloudflare tunnel alternative to securely connect locally hosted services to a domain name.
 
-I own two domains: [sooox.cc](https://sooox.cc) and [privacymatters.cc](https://privacymatters.cc) (WIP)
+Domains: [sooox.cc](https://sooox.cc) and [privacymatters.cc](https://privacymatters.cc) (WIP)
 
 ## Reverse Proxy / Zero Trust VPN
 I use [Pangolin](https://pangolin.net/) for everything, its as simple as creating a site, adding your domains, and creating your resources. 
@@ -17,6 +17,9 @@ Pangolin builds on top of other widely trusted projects like wireguard and traef
 I also use it to secure private resources using access control rules (auth, pin code, user device, ip, country, ...) 
 
 also... [cloudflare already controls more than enough of the internet](https://0xacab.org/dCF/deCloudflare)
+
+# VPN
+For private browsing, I also host a wireguard VPN server on the VPS, rather than paying for a separate VPN client.
 
 ## Services
 - [Element Web Client](https://element.privacymatters.cc)
@@ -36,3 +39,5 @@ also... [cloudflare already controls more than enough of the internet](https://0
   - Yuup, Pangolin supports Raw TCP/UDP Resources which is pretty sick
 - Websites like this one
 
+Everything is hosted locally on devices I own, the VPS is only used to securely publish the things I host to the internet, 
+no opening ports/port-forwarding, no cloudflare.
