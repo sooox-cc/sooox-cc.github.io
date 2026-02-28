@@ -1,0 +1,108 @@
+---
+title: "Linkpen"
+description: "FOSS alternative for linktree"
+date: 2026-02-28
+tags: ["FOSS Alternative", "JavaScript", "Programming"]
+draft: false
+---
+
+This is a collaborative project owned by [SleepingAmi](https://sleepingami.github.io/)
+
+Linkpen is an open-source, self-hosted alternative to Linktree that allows you to create 
+a personalized landing page with all your important links in one place.
+
+You host it yourself: on a VPS, a Raspberry Pi, whatever you want. Your data stays yours.
+
+## Main Features
+- Link-in-bio pages at `/{username}`
+- 8 pre-built themes 
+- Drag-and-drop link reordering
+- Admin dashboard with user management
+- First registered user becomes admin automatically
+
+### Themes
+
+Linkpen ships with 8 built-in themes:
+
+- Catppuccin Frappé 
+- Purpleboi 
+- Dark Mocha 
+- VS Code Dark (I made this one)
+- Privacy Matters (I made this one)
+- Cozy Cat Café (I made this one)
+- Ami's Anime Theme 
+- Terminux (CRT) 
+
+Users pick their theme from the dashboard. No code required.
+
+### Admin Dashboard
+
+The first user is automatically made an admin,
+as an instance admin, you can:
+
+- View all registered users
+- Promote or demote users to admin
+- Delete problematic accounts
+- Jump to any user's public page
+
+### Security
+
+Linkpen takes security seriously:
+
+- Rate limiting on API routes (100 requests per 15 minutes)
+- XSS sanitization on all user input
+- CSRF protection on forms
+- bcrypt for password hashing
+- Cookie consent required before registration
+
+There's also a test mode for development that lets you selectively disable these protections without modifying code.
+
+### Logging
+
+Four separate log files:
+
+- `auth.log` - Logins, logouts, registrations
+- `admin.log` - Admin actions
+- `user.log` - User activity
+- `error.log` - Errors
+
+## Technical Stack
+
+| Component     | Technology        |
+|---------------|-------------------|
+| Backend       | Express.js        |
+| Database      | SQLite            |
+| Sessions      | connect-sqlite3   |
+| Templates     | EJS               |
+| Frontend      | Vanilla JS + CSS  |
+| Drag & Drop   | SortableJS        |
+
+SQLite keeps things portable. The entire database is a single file. 
+Backup means copying one file. Migration means moving one file.
+
+I might rewrite the database and api stuff to use better-sqlite3.
+
+## Extending Linkpen
+
+Want to add a theme? Create a folder in `/public/templates/`:
+
+```
+your-theme/
+├── template.ejs
+├── style.css
+└── script.js (optional)
+```
+Register it in the themes config, and it appears in user dashboards automatically.
+
+## Official instance
+We are running the official instance at [linkpen.xyz](https://linkpen.xyz). <br/> 
+Here's my page: [linkpen.xyz/sooox](https://linkpen.xyz/sooox)
+
+## Final Thoughts
+
+Linkpen solves a simple problem without over-engineering. 
+No microservices. No Kubernetes. Just a Node app, a SQLite file, and some EJS templates.
+
+If you want a link-in-bio page and prefer self-hosting over SaaS lock-in, give it a try. 
+The repo is [github.com/SleepingAmi/linkpen](https://github.com/SleepingAmi/linkpen).
+
