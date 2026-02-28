@@ -8,7 +8,7 @@ draft: false
 
 Here I used real-time screen analysis, machine learning prediction, and automated control inputs to create a model capable of playing trackmania automomously.
 
-# How it worked
+## How it worked
 - Real-time screen analysis
   - Uses OpenCV for processing game screen captures
     - grayscale, gaussian blur, canny edge detection, HoughLinesP algorithm for line detection
@@ -17,16 +17,16 @@ Here I used real-time screen analysis, machine learning prediction, and automate
 - Automated Control System 
   - PyDirectInput for game control, simulating keyboard inputs based on predictions 
 
-# Data Collection
+## Data Collection
 To train the AI model we made a script that periodically creates screenshots and control inputs
 
-# Model Architecture
+## Model Architecture
 - Input layer accepts 224x224x3 images
 - Multiple convolutional and max pooling layers 
 - Dense layers for feature interpretation 
 - Output layer for three-class prediction (up, up&left, up&right)
 
-# Testing 
+## Testing 
 We trained on the first track (Training - 01) and then created a custom track from scratch and it finished
 
 It was a very basic model but it worked
