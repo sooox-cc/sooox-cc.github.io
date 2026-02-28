@@ -1,11 +1,12 @@
+@import url(https://fonts.bunny.net/css?family=fira-code:400,700);
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  --font-sans: 'Gohufont', monospace;
-  --font-mono: 'Gohufont', monospace;
+  --font-sans: 'Fira Code', monospace;
+  --font-mono: 'Fira Code', monospace;
 }
 
 .tech-icon {
@@ -20,4 +21,75 @@
 
 .pulse-dot {
   animation: pulse-dot 2s ease-in-out infinite;
+}
+
+/* Inline code: remove Tailwind Typography backtick pseudo-elements */
+.prose :where(code):not(pre > code)::before,
+.prose :where(code):not(pre > code)::after {
+  content: none !important;
+}
+
+/* Inline code: subtle background */
+.prose :where(code):not(pre > code) {
+  padding: 0.1em 0.35em;
+  border-radius: 0.25rem;
+  background-color: #e4e4e7; /* zinc-200 */
+  font-size: 0.875em;
+}
+.dark .prose :where(code):not(pre > code) {
+  background-color: #27272a; /* zinc-800 */
+}
+
+/* Override Shiki's inline background-color on pre elements */
+.prose pre {
+  background-color: #e4e4e7 !important; /* zinc-200 */
+  border-radius: 0.5rem;
+}
+.dark .prose pre {
+  background-color: #18181b !important; /* zinc-900 */
+}
+
+/* Code block wrapper (injected by copy-button script) */
+.code-wrapper {
+  position: relative;
+}
+
+.code-lang {
+  position: absolute;
+  top: 0.55rem;
+  right: 0.6rem;
+  font-size: 0.7rem;
+  color: #52525b; /* zinc-600 */
+  pointer-events: none;
+  user-select: none;
+  transition: opacity 0.15s;
+}
+
+.code-wrapper:hover .code-lang {
+  opacity: 0;
+}
+
+.copy-btn {
+  position: absolute;
+  top: 0.4rem;
+  right: 0.5rem;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.7rem;
+  line-height: 1.5;
+  background-color: #3f3f46; /* zinc-700 */
+  color: #a1a1aa; /* zinc-400 */
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.15s, color 0.15s;
+  font-family: inherit;
+}
+
+.code-wrapper:hover .copy-btn {
+  opacity: 1;
+}
+
+.copy-btn:hover {
+  color: #ffffff;
 }
