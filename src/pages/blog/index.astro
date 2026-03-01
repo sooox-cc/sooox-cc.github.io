@@ -20,21 +20,57 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
         </p>
       </div>
 
+      <div class="mb-8">
+        <div class="relative">
+          <svg class="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-zinc-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+          </svg>
+          <input
+            id="search"
+            type="text"
+            placeholder="Search posts..."
+            class="w-full pl-9 pr-4 py-2.5 rounded-lg border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900/50 text-sm text-zinc-900 dark:text-white placeholder:text-zinc-400 focus:outline-none focus:border-zinc-400 dark:focus:border-zinc-500 transition-colors"
+          />
+        </div>
+      </div>
+
       {posts.length === 0 ? (
         <p class="text-center text-zinc-500 dark:text-zinc-400">No posts yet.</p>
       ) : (
-        <div class="grid gap-4">
+        <div id="post-list" class="grid gap-4">
           {posts.map((post) => (
-            <BlogCard
-              slug={post.slug}
-              title={post.data.title}
-              description={post.data.description}
-              date={post.data.date}
-              tags={post.data.tags}
-            />
+            <div
+              data-search={[post.data.title, post.data.description, ...(post.data.tags ?? [])].join(' ').toLowerCase()}
+            >
+              <BlogCard
+                slug={post.slug}
+                title={post.data.title}
+                description={post.data.description}
+                date={post.data.date}
+                tags={post.data.tags}
+              />
+            </div>
           ))}
         </div>
+        <p id="no-results" class="hidden text-center text-zinc-500 dark:text-zinc-400 py-8">No posts match your search.</p>
       )}
+
+      <script>
+        const input = document.getElementById('search') as HTMLInputElement
+        const items = document.querySelectorAll<HTMLElement>('#post-list > [data-search]')
+        const noResults = document.getElementById('no-results')
+
+        input?.addEventListener('input', () => {
+          const q = input.value.toLowerCase().trim()
+          let visible = 0
+          items.forEach((el) => {
+            const match = !q || el.dataset.search!.includes(q)
+            el.style.display = match ? '' : 'none'
+            if (match) visible++
+          })
+          noResults?.classList.toggle('hidden', visible > 0)
+        })
+      </script>
     </div>
   </main>
   <Footer />
