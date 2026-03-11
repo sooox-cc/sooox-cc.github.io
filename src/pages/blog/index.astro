@@ -43,7 +43,7 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
               data-search={[post.data.title, post.data.description, ...(post.data.tags ?? [])].join(' ').toLowerCase()}
             >
               <BlogCard
-                slug={post.slug}
+                slug={post.id.replace(/\.(md|mdx)$/, '')}
                 title={post.data.title}
                 description={post.data.description}
                 date={post.data.date}
