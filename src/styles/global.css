@@ -1,12 +1,15 @@
-@import url(https://fonts.bunny.net/css?family=fira-code:400,700);
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:is(.dark *));
 
-@theme {
-  --font-sans: 'Fira Code', monospace;
-  --font-mono: 'Fira Code', monospace;
+@theme inline {
+  --font-sans: var(--font-fira-code);
+  --font-mono: var(--font-fira-code);
+}
+
+* {
+  font-feature-settings: "liga" 1, "calt" 1;
 }
 
 .tech-icon {
@@ -40,13 +43,21 @@
   background-color: #27272a; /* zinc-800 */
 }
 
-/* Override Shiki's inline background-color on pre elements */
+/* Code block backgrounds (zinc palette to match site theme) */
 .prose pre {
-  background-color: #e4e4e7 !important; /* zinc-200 */
+  background-color: #e4e4e7; /* zinc-200 */
   border-radius: 0.5rem;
 }
 .dark .prose pre {
-  background-color: #18181b !important; /* zinc-900 */
+  background-color: #18181b; /* zinc-900 */
+}
+
+/* Shiki dual theme: light/dark token colors via .dark class */
+.prose pre code span {
+  color: var(--shiki-light);
+}
+.dark .prose pre code span {
+  color: var(--shiki-dark);
 }
 
 /* Code block wrapper (injected by copy-button script) */

@@ -98,18 +98,18 @@ import ProjectCard from '../components/ProjectCard.astro'
           </h3>
           <div class="grid grid-cols-3 sm:grid-cols-5 gap-3">
             {[
-              { src: "https://api.iconify.design/skill-icons/python-light.svg", name: "Python" },
-              { src: "https://api.iconify.design/skill-icons/php-light.svg", name: "PHP" },
-              { src: "https://api.iconify.design/skill-icons/javascript.svg", name: "JavaScript" },
-              { src: "https://api.iconify.design/skill-icons/java-light.svg", name: "Java" },
-              { src: "https://api.iconify.design/skill-icons/c.svg", name: "C" },
-              { src: "https://api.iconify.design/skill-icons/cpp.svg", name: "C++" },
-              { src: "https://api.iconify.design/skill-icons/cs.svg", name: "C#" },
-              { src: "https://api.iconify.design/skill-icons/bash-light.svg", name: "Bash" },
-              { src: "https://api.iconify.design/skill-icons/html.svg", name: "HTML" },
-              { src: "https://api.iconify.design/skill-icons/css.svg", name: "CSS" },
-              { src: "https://api.iconify.design/skill-icons/rust.svg", name: "Rust" },
-              { src: "https://api.iconify.design/skill-icons/typescript.svg", name: "TypeScript" },
+              { src: "/icons/python-light.svg", name: "Python" },
+              { src: "/icons/php-light.svg", name: "PHP" },
+              { src: "/icons/javascript.svg", name: "JavaScript" },
+              { src: "/icons/java-light.svg", name: "Java" },
+              { src: "/icons/c.svg", name: "C" },
+              { src: "/icons/cpp.svg", name: "C++" },
+              { src: "/icons/cs.svg", name: "C#" },
+              { src: "/icons/bash-light.svg", name: "Bash" },
+              { src: "/icons/html.svg", name: "HTML" },
+              { src: "/icons/css.svg", name: "CSS" },
+              { src: "/icons/rust.svg", name: "Rust" },
+              { src: "/icons/typescript.svg", name: "TypeScript" },
             ].map(({ src, name }) => (
               <div class="p-4 rounded-lg border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900/50 text-center flex flex-col items-center gap-2">
                 <img src={src} alt={name} class="tech-icon" />
@@ -134,23 +134,23 @@ import ProjectCard from '../components/ProjectCard.astro'
               <h4 class="text-sm font-medium text-zinc-500 dark:text-zinc-400 mb-3 uppercase tracking-wider">Backend</h4>
               <div class="grid grid-cols-3 gap-3">
                 <div class="flex flex-col items-center gap-2 p-2">
-                  <img src="https://api.iconify.design/skill-icons/laravel-light.svg" alt="Laravel" class="tech-icon">
+                  <img src="/icons/laravel-light.svg" alt="Laravel" class="tech-icon">
                   <span class="text-xs text-zinc-700 dark:text-zinc-300">Laravel</span>
                 </div>
                 <div class="flex flex-col items-center gap-2 p-2">
-                  <img src="https://api.iconify.design/skill-icons/flask-light.svg" alt="Flask" class="tech-icon">
+                  <img src="/icons/flask-light.svg" alt="Flask" class="tech-icon">
                   <span class="text-xs text-zinc-700 dark:text-zinc-300">Flask</span>
                 </div>
                 <div class="flex flex-col items-center gap-2 p-2">
-                  <img src="https://api.iconify.design/skill-icons/nodejs-light.svg" alt="Node.js" class="tech-icon">
+                  <img src="/icons/nodejs-light.svg" alt="Node.js" class="tech-icon">
                   <span class="text-xs text-zinc-700 dark:text-zinc-300">Node.js</span>
                 </div>
                 <div class="flex flex-col items-center gap-2 p-2">
-                  <img src="https://api.iconify.design/skill-icons/spring-light.svg" alt="Spring" class="tech-icon">
+                  <img src="/icons/spring-light.svg" alt="Spring" class="tech-icon">
                   <span class="text-xs text-zinc-700 dark:text-zinc-300">Spring</span>
                 </div>
                 <div class="flex flex-col items-center gap-2 p-2">
-                  <img src="https://api.iconify.design/skill-icons/dotnet.svg" alt="ASP.NET" class="tech-icon">
+                  <img src="/icons/dotnet.svg" alt="ASP.NET" class="tech-icon">
                   <span class="text-xs text-zinc-700 dark:text-zinc-300">ASP.NET</span>
                 </div>
                 <div class="flex flex-col items-center gap-2 p-2">
@@ -158,15 +158,15 @@ import ProjectCard from '../components/ProjectCard.astro'
                   <span class="text-xs text-zinc-700 dark:text-zinc-300">Livewire</span>
                 </div>
                 <div class="flex flex-col items-center gap-2 p-2">
-                  <img src="https://api.iconify.design/skill-icons/tauri-light.svg" alt="Tauri" class="tech-icon">
+                  <img src="/icons/tauri-light.svg" alt="Tauri" class="tech-icon">
                   <span class="text-xs text-zinc-700 dark:text-zinc-300">Tauri</span>
                 </div>
                 <div class="flex flex-col items-center gap-2 p-2">
-                  <img src="https://api.iconify.design/skill-icons/elasticsearch-light.svg" alt="Elasticsearch" class="tech-icon">
+                  <img src="/icons/elasticsearch-light.svg" alt="Elasticsearch" class="tech-icon">
                   <span class="text-xs text-zinc-700 dark:text-zinc-300">Elasticsearch</span>
                 </div>
                 <div class="flex flex-col items-center gap-2 p-2">
-                  <img src="https://cdn.simpleicons.org/streamlit/FF4B4B" alt="Streamlit" class="tech-icon">
+                  <img src="/icons/streamlit.svg" alt="Streamlit" class="tech-icon">
                   <span class="text-xs text-zinc-700 dark:text-zinc-300">Streamlit</span>
                 </div>
               </div>
@@ -177,31 +177,31 @@ import ProjectCard from '../components/ProjectCard.astro'
               <h4 class="text-sm font-medium text-zinc-500 dark:text-zinc-400 mb-3 uppercase tracking-wider">Frontend</h4>
               <div class="grid grid-cols-3 gap-3">
                 <div class="flex flex-col items-center gap-2 p-2">
-                  <img src="https://api.iconify.design/skill-icons/tailwindcss-light.svg" alt="Tailwind CSS" class="tech-icon">
+                  <img src="/icons/tailwindcss-light.svg" alt="Tailwind CSS" class="tech-icon">
                   <span class="text-xs text-zinc-700 dark:text-zinc-300">Tailwind</span>
                 </div>
                 <div class="flex flex-col items-center gap-2 p-2">
-                  <img src="https://api.iconify.design/skill-icons/alpinejs-light.svg" alt="Alpine.js" class="tech-icon">
+                  <img src="/icons/alpinejs-light.svg" alt="Alpine.js" class="tech-icon">
                   <span class="text-xs text-zinc-700 dark:text-zinc-300">Alpine.js</span>
                 </div>
                 <div class="flex flex-col items-center gap-2 p-2">
-                  <img src="https://api.iconify.design/skill-icons/jquery.svg" alt="jQuery" class="tech-icon">
+                  <img src="/icons/jquery.svg" alt="jQuery" class="tech-icon">
                   <span class="text-xs text-zinc-700 dark:text-zinc-300">jQuery</span>
                 </div>
                 <div class="flex flex-col items-center gap-2 p-2">
-                  <img src="https://api.iconify.design/skill-icons/bootstrap.svg" alt="Bootstrap" class="tech-icon">
+                  <img src="/icons/bootstrap.svg" alt="Bootstrap" class="tech-icon">
                   <span class="text-xs text-zinc-700 dark:text-zinc-300">Bootstrap</span>
                 </div>
                 <div class="flex flex-col items-center gap-2 p-2">
-                  <img src="https://cdn.simpleicons.org/thymeleaf/005F0F" alt="Thymeleaf" class="tech-icon">
+                  <img src="/icons/thymeleaf.svg" alt="Thymeleaf" class="tech-icon">
                   <span class="text-xs text-zinc-700 dark:text-zinc-300">Thymeleaf</span>
                 </div>
                 <div class="flex flex-col items-center gap-2 p-2">
-                  <img src="https://api.iconify.design/skill-icons/html.svg" alt="Blade" class="tech-icon">
+                  <img src="/icons/html.svg" alt="Blade" class="tech-icon">
                   <span class="text-xs text-zinc-700 dark:text-zinc-300">Blade</span>
                 </div>
                 <div class="flex flex-col items-center gap-2 p-2">
-                  <img src="https://api.iconify.design/skill-icons/react-light.svg" alt="React" class="tech-icon">
+                  <img src="/icons/react-light.svg" alt="React" class="tech-icon">
                   <span class="text-xs text-zinc-700 dark:text-zinc-300">React</span>
                 </div>
                 <div class="flex flex-col items-center gap-2 p-2">
@@ -228,27 +228,27 @@ import ProjectCard from '../components/ProjectCard.astro'
               <h4 class="text-sm font-medium text-zinc-500 dark:text-zinc-400 mb-3 uppercase tracking-wider">AI / Machine Learning</h4>
               <div class="grid grid-cols-3 gap-3">
                 <div class="flex flex-col items-center gap-2 p-2">
-                  <img src="https://api.iconify.design/skill-icons/tensorflow-light.svg" alt="TensorFlow" class="tech-icon">
+                  <img src="/icons/tensorflow-light.svg" alt="TensorFlow" class="tech-icon">
                   <span class="text-xs text-zinc-700 dark:text-zinc-300">TensorFlow</span>
                 </div>
                 <div class="flex flex-col items-center gap-2 p-2">
-                  <img src="https://api.iconify.design/skill-icons/pytorch-light.svg" alt="PyTorch" class="tech-icon">
+                  <img src="/icons/pytorch-light.svg" alt="PyTorch" class="tech-icon">
                   <span class="text-xs text-zinc-700 dark:text-zinc-300">PyTorch</span>
                 </div>
                 <div class="flex flex-col items-center gap-2 p-2">
-                  <img src="https://api.iconify.design/skill-icons/opencv-light.svg" alt="OpenCV" class="tech-icon">
+                  <img src="/icons/opencv-light.svg" alt="OpenCV" class="tech-icon">
                   <span class="text-xs text-zinc-700 dark:text-zinc-300">OpenCV</span>
                 </div>
                 <div class="flex flex-col items-center gap-2 p-2">
-                  <img src="https://api.iconify.design/skill-icons/scikitlearn-light.svg" alt="scikit-learn" class="tech-icon">
+                  <img src="/icons/scikitlearn-light.svg" alt="scikit-learn" class="tech-icon">
                   <span class="text-xs text-zinc-700 dark:text-zinc-300">scikit-learn</span>
                 </div>
                 <div class="flex flex-col items-center gap-2 p-2">
-                  <img src="https://cdn.simpleicons.org/ultralytics/4B0082" alt="YOLOv8" class="tech-icon">
+                  <img src="/icons/ultralytics.svg" alt="YOLOv8" class="tech-icon">
                   <span class="text-xs text-zinc-700 dark:text-zinc-300">YOLOv8</span>
                 </div>
                 <div class="flex flex-col items-center gap-2 p-2">
-                  <img src="https://cdn.simpleicons.org/pandas/150458" alt="pandas" class="tech-icon">
+                  <img src="/icons/pandas.svg" alt="pandas" class="tech-icon">
                   <span class="text-xs text-zinc-700 dark:text-zinc-300">pandas</span>
                 </div>
               </div>
@@ -267,19 +267,19 @@ import ProjectCard from '../components/ProjectCard.astro'
                   <span class="text-xs text-zinc-700 dark:text-zinc-300">dbt</span>
                 </div>
                 <div class="flex flex-col items-center gap-2 p-2">
-                  <img src="https://cdn.simpleicons.org/jupyter/F37626" alt="Jupyter" class="tech-icon">
+                  <img src="/icons/jupyter.svg" alt="Jupyter" class="tech-icon">
                   <span class="text-xs text-zinc-700 dark:text-zinc-300">Jupyter</span>
                 </div>
                 <div class="flex flex-col items-center gap-2 p-2">
-                  <img src="https://cdn.simpleicons.org/apacheairflow/017CEE" alt="Airflow" class="tech-icon">
+                  <img src="/icons/apacheairflow.svg" alt="Airflow" class="tech-icon">
                   <span class="text-xs text-zinc-700 dark:text-zinc-300">Airflow</span>
                 </div>
                 <div class="flex flex-col items-center gap-2 p-2">
-                  <img src="https://cdn.simpleicons.org/minio/C72C48" alt="MinIO" class="tech-icon">
+                  <img src="/icons/minio.svg" alt="MinIO" class="tech-icon">
                   <span class="text-xs text-zinc-700 dark:text-zinc-300">MinIO</span>
                 </div>
                 <div class="flex flex-col items-center gap-2 p-2">
-                  <img src="https://cdn.simpleicons.org/apachesuperset/20A6C9" alt="Superset" class="tech-icon">
+                  <img src="/icons/apachesuperset.svg" alt="Superset" class="tech-icon">
                   <span class="text-xs text-zinc-700 dark:text-zinc-300">Superset</span>
                 </div>
               </div>
@@ -297,11 +297,11 @@ import ProjectCard from '../components/ProjectCard.astro'
           </h3>
           <div class="grid grid-cols-3 sm:grid-cols-5 gap-3">
             {[
-              { src: "https://api.iconify.design/skill-icons/postgresql-light.svg", name: "PostgreSQL" },
-              { src: "https://api.iconify.design/skill-icons/mysql-light.svg", name: "MySQL" },
-              { src: "https://api.iconify.design/skill-icons/sqlite.svg", name: "SQLite" },
-              { src: "https://api.iconify.design/skill-icons/mongodb.svg", name: "MongoDB" },
-              { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mariadb/mariadb-original.svg", name: "MariaDB" },
+              { src: "/icons/postgresql-light.svg", name: "PostgreSQL" },
+              { src: "/icons/mysql-light.svg", name: "MySQL" },
+              { src: "/icons/sqlite.svg", name: "SQLite" },
+              { src: "/icons/mongodb.svg", name: "MongoDB" },
+              { src: "/icons/mariadb.svg", name: "MariaDB" },
             ].map(({ src, name }) => (
               <div class="p-4 rounded-lg border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900/50 text-center flex flex-col items-center gap-2">
                 <img src={src} alt={name} class="tech-icon" />
@@ -325,27 +325,27 @@ import ProjectCard from '../components/ProjectCard.astro'
               <h4 class="text-sm font-medium text-zinc-500 dark:text-zinc-400 mb-3 uppercase tracking-wider">Containerization & CI/CD</h4>
               <div class="grid grid-cols-3 gap-3">
                 <div class="flex flex-col items-center gap-2 p-2">
-                  <img src="https://api.iconify.design/skill-icons/docker.svg" alt="Docker" class="tech-icon">
+                  <img src="/icons/docker.svg" alt="Docker" class="tech-icon">
                   <span class="text-xs text-zinc-700 dark:text-zinc-300">Docker</span>
                 </div>
                 <div class="flex flex-col items-center gap-2 p-2">
-                  <img src="https://api.iconify.design/skill-icons/kubernetes.svg" alt="Kubernetes" class="tech-icon">
+                  <img src="/icons/kubernetes.svg" alt="Kubernetes" class="tech-icon">
                   <span class="text-xs text-zinc-700 dark:text-zinc-300">Kubernetes</span>
                 </div>
                 <div class="flex flex-col items-center gap-2 p-2">
-                  <img src="https://api.iconify.design/skill-icons/git.svg" alt="Git" class="tech-icon">
+                  <img src="/icons/git.svg" alt="Git" class="tech-icon">
                   <span class="text-xs text-zinc-700 dark:text-zinc-300">Git</span>
                 </div>
                 <div class="flex flex-col items-center gap-2 p-2">
-                  <img src="https://api.iconify.design/skill-icons/jenkins-light.svg" alt="Jenkins" class="tech-icon">
+                  <img src="/icons/jenkins-light.svg" alt="Jenkins" class="tech-icon">
                   <span class="text-xs text-zinc-700 dark:text-zinc-300">Jenkins</span>
                 </div>
                 <div class="flex flex-col items-center gap-2 p-2">
-                  <img src="https://api.iconify.design/skill-icons/nginx.svg" alt="NGINX" class="tech-icon">
+                  <img src="/icons/nginx.svg" alt="NGINX" class="tech-icon">
                   <span class="text-xs text-zinc-700 dark:text-zinc-300">NGINX</span>
                 </div>
                 <div class="flex flex-col items-center gap-2 p-2">
-                  <img src="https://api.iconify.design/skill-icons/linux-light.svg" alt="Linux" class="tech-icon">
+                  <img src="/icons/linux-light.svg" alt="Linux" class="tech-icon">
                   <span class="text-xs text-zinc-700 dark:text-zinc-300">Linux</span>
                 </div>
               </div>
@@ -355,11 +355,11 @@ import ProjectCard from '../components/ProjectCard.astro'
               <h4 class="text-sm font-medium text-zinc-500 dark:text-zinc-400 mb-3 uppercase tracking-wider">Infrastructure</h4>
               <div class="grid grid-cols-3 gap-3">
                 <div class="flex flex-col items-center gap-2 p-2">
-                  <img src="https://cdn.simpleicons.org/proxmox/E57000" alt="Proxmox" class="tech-icon">
+                  <img src="/icons/proxmox.svg" alt="Proxmox" class="tech-icon">
                   <span class="text-xs text-zinc-700 dark:text-zinc-300">Proxmox</span>
                 </div>
                 <div class="flex flex-col items-center gap-2 p-2">
-                  <img src="https://api.iconify.design/skill-icons/arch-light.svg" alt="Arch Linux" class="tech-icon">
+                  <img src="/icons/arch-light.svg" alt="Arch Linux" class="tech-icon">
                   <span class="text-xs text-zinc-700 dark:text-zinc-300">Arch Linux</span>
                 </div>
                 <div class="flex flex-col items-center gap-2 p-2">
@@ -407,7 +407,7 @@ import ProjectCard from '../components/ProjectCard.astro'
               <span class="text-xs font-medium text-zinc-900 dark:text-white">PGP/GPG</span>
             </div>
             <div class="p-4 rounded-lg border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900/50 text-center">
-              <img src="https://cdn.simpleicons.org/tryhackme/212C42" alt="TryHackMe" class="h-8 w-8 mx-auto mb-2">
+              <img src="/icons/tryhackme.svg" alt="TryHackMe" class="h-8 w-8 mx-auto mb-2">
               <span class="text-xs font-medium text-zinc-900 dark:text-white">TryHackMe</span>
             </div>
           </div>
