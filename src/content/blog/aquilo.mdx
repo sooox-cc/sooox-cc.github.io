@@ -1,0 +1,96 @@
+---
+title: "Aquilo (WIP)"
+description: "Privacy-first community chat platform (think Discord but FOSS, self-hostable, no surveillance). Part of the Hydraulisc ecosystem."
+date: 2026-03-16
+tags: ["JavaScript", "SQLite", "PGP", "AES-256", "OAuth"]
+draft: false
+---
+
+This is a collaborative project owned by [SleepingAmi](https://sleepingami.github.io/)
+
+Aquilo is an open-source, self-hostable community chat platform. Think Discord, but without the surveillance, or the behavioral profiling. 
+Built on the [Hydraulisc](https://hydraulisc.net) ecosystem, it's designed around one idea: communities should be about people, not data.
+
+Tagline: *"Light. Fast. Untouchable."*
+
+AGPL v3 licensed. Currently in beta or early alpha, or even before that idrk tbh we just started kinda thing.
+
+## What the fuck is an aquilo?
+
+Honestly all you need to know is discord but less ass, dooky, and shit.
+Aquilo has servers, channels, and messages (obv) all the usual messaging platform stuff.
+We are doing it a bit different though, before you can do any of the usual chatting you need to enter your **public** PGP key.
+
+## Security
+
+Before a user can access anything at all, he will need to go through a challenge-response flow to verify himself:
+1. Upload PGP key (done right after initial login)
+2. Server encrypts random string using your key
+3. User decrypts it locally and returns the plaintext
+4. Server verifies if it matches
+No private key ever touches the server. That's the point.
+
+**we will never touch your private key**
+
+From there, every server gets its own AES-256-GCM encryption key. 
+Messages are encrypted at rest in the database. 
+Reading them requires "unlocking" the server using another PGP challenge, solved locally, stored per-session. Close the session, lose the unlock.
+
+All user input goes through XSS sanitization and BIDI character stripping (the kind of spoofing attack most apps don't bother defending against but im schizo cybersec nerd). 
+httpOnly cookies, session-based auth, no analytics, no profiling, no tracking.
+
+## Tech stack
+
+| Component   | Technology              |
+|-------------|-------------------------|
+| Backend     | Node.js + Express 5     |
+| Database    | SQLite (better-sqlite3) |
+| Templates   | EJS                     |
+| Frontend    | Vanilla JS + CSS        |
+| Encryption  | OpenPGP 6, AES-256-GCM  |
+| Auth        | Hydraulisc OAuth        |
+
+Same philosophy as Linkpen: no framework overhead, no microservices, just a Node app and a SQLite file. The entire database is one file.
+
+## What im still working on 
+
+Here are *some* of the security features we literally just thought of:
+- Zero trust
+  - Dont trust, very for everything 
+- Dead man's switch
+  - auto-wipe account after being inactive for a set amount of time
+- Automatic account deletion
+  - auto-wipe account after set amount of time
+- Message timers
+  - self-destructing messages
+- Single-view messages
+  - read once, gone forever
+- Complete metadata removal
+  - im gonna speak my mind about this in a second
+- User-selectable encryption
+  - choose your cipher per conversation, PGP-only for high-sensitivity DMs
+
+The ideas of single-view messages and timer features are obviously ideas we got from "security" minded messengers like Signal and the like.
+But the metadata removal... why haven't more apps added this?? It just doesn't make sense to me?
+Also allowing people to choose their encryption, I mean encryption will be on by default but its not that hard to implement.
+
+## Official instance
+We do have an official instance running at [aquilo.hydraulisc.net](https://aquilo.hydraulisc.net) buuuut we are still full on building everything.
+
+The repo is on GitHub under the Hydraulisc organisation.
+
+## Final thoughts
+
+I dont think the security standards are enough right now, and our aim is to change this with Aquilo.
+We will build it with real "privacy by default" in mind. 
+But we will take it a bit more serious than other applications built by multi billion dollar orgs 
+who seem to promise the world on marketing pages but just under-deliver.
+
+The PGP requirement alone filters for a certain kind of user, one who has thought about their threat model.
+
+We will continue building on Aquilo and the Hydraulisc network, not for the sake of a feature list, but out of our personal philosophies.
+
+
+if you're building for people who care about privacy, you don't stop at encryption at rest.
+
+You go off a cliff.
