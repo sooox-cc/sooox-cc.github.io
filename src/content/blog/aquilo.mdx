@@ -6,7 +6,7 @@ tags: ["JavaScript", "SQLite", "PGP", "AES-256", "OAuth"]
 draft: false
 ---
 
-This is a collaborative project owned by [SleepingAmi](https://sleepingami.github.io/)
+This is an open source project owned by [SleepingAmi](https://sleepingami.github.io/)
 
 Aquilo is an open-source, self-hostable community chat platform. Think Discord, but without the surveillance, or the behavioral profiling. 
 Built on the [Hydraulisc](https://hydraulisc.net) ecosystem, it's designed around one idea: communities should be about people, not data.
@@ -19,7 +19,7 @@ AGPL v3 licensed. Currently in beta or early alpha, or even before that idrk tbh
 
 Honestly all you need to know is discord but less ass, dooky, and shit.
 Aquilo has servers, channels, and messages (obv) all the usual messaging platform stuff.
-We are doing it a bit different though, before you can do any of the usual chatting you need to enter your **public** PGP key.
+We are doing it a bit different though, before you can do any of the usual chatting you need to enter your _public_ PGP key.
 
 ## Security
 
@@ -30,7 +30,7 @@ Before a user can access anything at all, he will need to go through a challenge
 4. Server verifies if it matches
 No private key ever touches the server. That's the point.
 
-**we will never touch your private key**
+**we will never touch your private key** ||that sounds kinda weird||
 
 From there, every server gets its own AES-256-GCM encryption key. 
 Messages are encrypted at rest in the database. 

@@ -1,0 +1,31 @@
+---
+---
+<span class="spoiler" role="button" tabindex="0"><slot /></span>
+
+<style>
+  .spoiler {
+    background-color: oklch(0.21 0 0);
+    color: transparent;
+    border-radius: 3px;
+    padding: 0 3px;
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.2s, background-color 0.2s;
+  }
+
+  .spoiler.revealed {
+    color: inherit;
+    background-color: oklch(0.27 0 0);
+    user-select: text;
+  }
+</style>
+
+<script>
+  document.querySelectorAll('.spoiler').forEach((el) => {
+    const reveal = () => el.classList.add('revealed')
+    el.addEventListener('click', reveal)
+    el.addEventListener('keydown', (e) => {
+      if ((e as KeyboardEvent).key === 'Enter' || (e as KeyboardEvent).key === ' ') reveal()
+    })
+  })
+</script>

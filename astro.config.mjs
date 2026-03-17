@@ -4,6 +4,7 @@ import { defineConfig, fontProviders } from 'astro/config';
 import mdx from '@astrojs/mdx';
 import tailwindcss from '@tailwindcss/vite';
 import rehypeExternalLinks from 'rehype-external-links';
+import { remarkSpoiler } from './src/plugins/remark-spoiler.mjs';
 
 // https://astro.build/config
 export default defineConfig({
@@ -18,6 +19,7 @@ export default defineConfig({
   integrations: [mdx()],
 
   markdown: {
+    remarkPlugins: [remarkSpoiler],
     shikiConfig: {
       themes: {
         light: 'github-light',

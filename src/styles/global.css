@@ -104,3 +104,20 @@
 .copy-btn:hover {
   color: #ffffff;
 }
+
+/* Spoiler text */
+.spoiler {
+  background-color: #27272a; /* zinc-800 */
+  color: transparent;
+  border-radius: 3px;
+  padding: 0 3px;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.2s, background-color 0.2s;
+}
+
+.spoiler.revealed {
+  color: inherit;
+  background-color: #3f3f46; /* zinc-700 */
+  user-select: text;
+}
