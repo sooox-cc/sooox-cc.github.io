@@ -18,7 +18,7 @@ import ProjectCard from '../components/ProjectCard.astro'
             <div class="px-3 py-1.5 rounded-full border border-zinc-200 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-900">
               <div class="flex items-center gap-2">
                 <div class="h-2 w-2 rounded-full bg-green-500 pulse-dot"></div>
-                <span class="text-xs font-medium text-zinc-600 dark:text-zinc-400">Last updated: 17/03</span>
+                <span class="text-xs font-medium text-zinc-600 dark:text-zinc-400">Last updated: {new Date().toLocaleDateString('en-GB', { day: '2-digit', month: '2-digit' })}</span>
               </div>
             </div>
           </div>
@@ -419,56 +419,20 @@ import ProjectCard from '../components/ProjectCard.astro'
 
       <!-- Projects -->
       <section class="mb-20">
-        <h2 class="text-2xl font-bold text-zinc-900 dark:text-white mb-8 text-center">Featured Projects</h2>
+        <h2 class="text-2xl font-bold text-zinc-900 dark:text-white mb-8 text-center">Featured Posts</h2>
 
         <div class="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
           <ProjectCard
-            href="https://github.com/sooox-cc/privacymatters"
-            title="PrivacyMatters"
-            description="Anonymous forum platform. No email, no tracking, multi-network support (clearnet, Tor, I2P)."
-            tags={["Laravel", "Livewire", "PostgreSQL", "MinIO"]}
-            blogSlug="privacymatters"
-            icon='<svg class="h-5 w-5 text-zinc-900 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>'
+            title="Portable OpenWRT Router"
+            description="A portable, VLAN-capable router built on a Raspberry Pi 4B running OpenWRT."
+            tags={["Open Source", "Network", "OpenWRT", "Router", "Raspberry Pi", "Cybersecurity", "VLANs"]}
+            blogSlug="portable-router"
           />
-          <ProjectCard
-            href="https://github.com/sooox-cc/osint-studio"
-            title="OSINT Studio"
-            description="Desktop OSINT investigation tool with entity mapping, graph visualization, and relationship analysis."
-            tags={["Rust", "Tauri", "TypeScript", "React"]}
-            blogSlug="osint-studio"
-            icon='<svg class="h-5 w-5 text-zinc-900 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>'
-          />
-          <ProjectCard
-            href="https://github.com/sooox-cc/mdzen"
-            title="mdzen"
-            description="Minimalist, zen-like markdown reader with syntax highlighting, search, and table of contents."
-            tags={["Rust", "egui"]}
-            blogSlug="mdzen"
-            icon='<svg class="h-5 w-5 text-zinc-900 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>'
-          />
-          <ProjectCard
-            href="https://github.com/sooox-cc/breach-browser"
-            title="Breach Browser"
-            description="High-performance full-text search engine for large text datasets with advanced search syntax."
-            tags={["Python", "Flask", "Elasticsearch"]}
-            blogSlug="breach-browser"
-            icon='<svg class="h-5 w-5 text-zinc-900 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/></svg>'
-          />
-          <ProjectCard
-            href="https://github.com/sooox-cc/ids"
+         <ProjectCard
             title="Cloud IDS"
             description="ML-based intrusion detection system trained on the UNSW-NB15 cybersecurity benchmark dataset."
             tags={["Python", "Jupyter", "Docker"]}
             blogSlug="cloud-ids"
-            icon='<svg class="h-5 w-5 text-zinc-900 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>'
-          />
-          <ProjectCard
-            href="https://github.com/sooox-cc/pgp-verification"
-            title="PGP Verification"
-            description="2FA via PGP challenge-response protocol. Identity verification without KYC or personal data."
-            tags={["Python", "Streamlit", "PGPy"]}
-            blogSlug="pgp-verification"
-            icon='<svg class="h-5 w-5 text-zinc-900 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"/></svg>'
           />
         </div>
 
