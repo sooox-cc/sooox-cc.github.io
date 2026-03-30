@@ -1,0 +1,155 @@
+---
+title: "How I am learning Go"
+description: "Project based learning for Golang"
+date: 2026-03-30
+tags: ["Go", "Learning", "Programming", "Cybersecurity"]
+draft: false
+---
+
+While attempting to learn programming languages its easy to fall into one of two pitfalls:
+- Tutorial Hell: you watch tutorials and copy code without actually learning anything
+- Vibe Coding: you tell LLMs to code for you and get a false sense of understanding what you are writing
+
+Here is my goal: Learn Go through cybersecurity projects.
+
+no tutorials, no vibe coding, no copying code -> read the docs
+oh and also no external libraries for this one, [stdlib](https://pkg.go.dev/std) only!
+
+I feel like this is probably the best way to learn any programming language.
+
+
+Here are the resources I have used:
+- [pkg.go.dev](https://pkg.go.dev/)
+- [gobyexample.com](https://gobyexample.com/)
+
+## Part 1: TCP port scanner
+
+### Why a port scanner?
+Its a fundamental concept in network reconnaissance:
+before you can attack a system, you need to know what is running on it.
+
+Building a port scanner teaches you:
+- How TCP connections work 
+- How to handle concurrency (scanning ports one by one is too slow)
+- How to write CLI tools in Go
+
+---
+
+At the network level, a TCP connection starts with a three-way handshake
+1. Your machine sends a `SYN` packet
+2. If the port is open, the server replies with a `SYN-ACK`
+3. Your machine then responds with `ACK`
+
+A port scanner sends that first step to every port in a given range 
+and if you get to step two you know the port is open.
+
+### My first learning moment 
+I looked for a package that I could use to make a TCP connection 
+and found the [net package](https://pkg.go.dev/net). 
+`net.Dial` and `net.DialTimeout` immediately stood out to me. 
+
+So I looked into the difference between them, and thought 
+that `DialTimeout` was important because we dont want to flood the network with TCP packets.
+But thats wrong: the issue isnt flooding, its **filtered ports**.
+
+A port can be in one of three states:
+- Open, meaning its listening and the connection would succeed
+- Closed, meaning nothing is listening, and I wouldnt be able to connect 
+- Filtered, meaning a firewall is blocking it, so the SYN packet just disappears
+
+That third state is the problem, if a port is filtered and you are using `net.Dial`,
+your function will just sit there waiting for a response that will never come.
+With `net.DialTimeout`, you can give a timeout that assumes that 
+if you havent gotten a response after a given amount of time the port is closed/filtered
+(closed/filtered doesnt really matter here because I only want to see open ports right now).
+
+```go
+// attempt a TCP connection with localhost:80
+// if it doesnt respond after a second consider it closed
+conn, err := net.DialTimeout("tcp", "127.0.0.1:80", time.Second)
+```
+
+### The code I wrote
+```go
+package main
+
+import (
+    "flag"
+    "fmt"
+    "net"
+    "sync"
+    "time"
+)
+
+func scanPort(host string, port int, timeout time.Duration) bool {
+    address := fmt.Sprintf("%s:%d", host, port)
+    conn, err := net.DialTimeout("tcp", address, timeout)
+    if err != nil {
+        return false
+    }
+    conn.Close()
+    return true
+}
+
+func main() {
+    var wg sync.WaitGroup
+
+    host := flag.String("host", "127.0.0.1", "target host")
+    startPort := flag.Int("start", 1, "start port")
+    endPort := flag.Int("end", 100, "end port")
+    flag.Parse()
+
+    for port := *startPort; port <= *endPort; port++ {
+        wg.Add(1)
+        go func() {
+            defer wg.Done()
+            if scanPort(*host, port, time.Second) {
+                fmt.Printf("Port %d is open\n", port)
+            }
+        }()
+    }
+
+    wg.Wait()
+}
+```
+
+The `flag` package lets you define CLI arguments
+```go
+host := flag.String("host", "127.0.0.1", "target host")
+```
+This creates a flag called `--host` with a default value of `127.0.0.1` and a description.
+One thing that I had trouble with was that `flag.String()` returned a pointer to a string, not the string itself.
+So to use the value, you would have to dereference it with `*`.
+```go
+fmt.Println(host)   // prints a reference: 0x29b0cdaec0b0 
+fmt.Println(*host)  // prints the actual string value
+```
+
+After calling `flag.Parse()` you can run the scanner like:
+```bash
+go run main.go --host 192.168.1.1 --start 1 --end 1000
+```
+
+If you scan the ports 1-1000 one by one with a 1-sec timeout, it would take quite a while to run.
+The fix to this is using `goroutines`, concurrency. I found this by reading the documentation of the [sync package](https://pkg.go.dev/sync).
+
+
+We can let a function run concurrently by adding `go` in front of it.
+```go
+go func() {
+    // runs concurrently
+}()
+```
+If the `main()` function finishes before the goroutines do, they get killed, 
+so you need a way to say "wait until they are done". This is what `sync.WaitGroup` is for.
+```go
+var wg sync.WaitGroup
+wg.Add(1)             // add a goroutine
+go func() {
+    defer wg.Done()   // lets us know this goroutine is done
+    // ...
+}()
+wg.Wait()             // wait until all goroutines are done
+```
+
+Next I will be writing a banner grabber, which adds onto this project but will allow me to identify the services running on the open ports.
