@@ -82,7 +82,11 @@ import (
 )
 
 func scanPort(host string, port int, timeout time.Duration) bool {
+    // I had to find a way to add the port to the IP address,
+    // since port is an integer and the host is a string, 
+    // I had to convert them to the same type 
     address := fmt.Sprintf("%s:%d", host, port)
+    // attempt to connect, if it fails consider it closed
     conn, err := net.DialTimeout("tcp", address, timeout)
     if err != nil {
         return false
@@ -94,11 +98,16 @@ func scanPort(host string, port int, timeout time.Duration) bool {
 func main() {
     var wg sync.WaitGroup
 
+    // get the flags from the user input and set default values
     host := flag.String("host", "127.0.0.1", "target host")
     startPort := flag.Int("start", 1, "start port")
     endPort := flag.Int("end", 100, "end port")
     flag.Parse()
 
+    // loop through the ports from min to max, 
+    // then run the scanPort function for each port
+    // do this concurrently using goroutines
+    // and print only when a port is open
     for port := *startPort; port <= *endPort; port++ {
         wg.Add(1)
         go func() {
